@@ -8,7 +8,7 @@ local player = Players.LocalPlayer
 -- timings
 local speedDelay = 0.007
 local comboSpeed = 0.004
-local comboHold = 0.03 -- longer hold for combo
+local comboHold = 0.03
 local rpgSpeed = speedDelay * 2.5
 local snowballSlow = 0.04
 
@@ -16,34 +16,9 @@ task.wait(1)
 
 local viewport = camera.ViewportSize
 local CLICK_X = viewport.X / 2
-local CLICK_Y = viewport.Y / 2 - 15
+local CLICK_Y = viewport.Y / 2 - 120
 local LOCK_X = viewport.X - 170
 local LOCK_Y = viewport.Y - 100
-
--------------------------------------------------
--- Crosshair
--------------------------------------------------
-
-local gui = Instance.new("ScreenGui")
-gui.ResetOnSpawn = false
-gui.Parent = player:WaitForChild("PlayerGui")
-
-local crossX = CLICK_X
-local crossY = CLICK_Y - 45
-
-local hLine = Instance.new("Frame")
-hLine.Size = UDim2.new(0, 24, 0, 3)
-hLine.Position = UDim2.new(0, crossX-12, 0, crossY-1)
-hLine.BackgroundColor3 = Color3.new(1,1,1)
-hLine.BorderSizePixel = 0
-hLine.Parent = gui
-
-local vLine = Instance.new("Frame")
-vLine.Size = UDim2.new(0, 3, 0, 24)
-vLine.Position = UDim2.new(0, crossX-1, 0, crossY-12)
-vLine.BackgroundColor3 = Color3.new(1,1,1)
-vLine.BorderSizePixel = 0
-vLine.Parent = gui
 
 -------------------------------------------------
 -- Helpers
